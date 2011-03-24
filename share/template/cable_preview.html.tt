@@ -1,0 +1,15 @@
+<a name="cable-[% count %]"/>
+<h2>
+(<a href="#cable-[% count + 1 %]">Previous</a>)
+Cable #[% count %]
+(<a href="#cable-[% count - 1 %]">Next</a>)
+</h2>
+<ul>
+  <li>Publish Title: <a href="[% From %]">[% publish_title %]</a></li>
+  <li>Publish Date: [% publish_date %]</li>
+  <li>Cable Title: [% cable_title %]</li>
+  <li>Cable Sent: [% cable_sent %]</li>
+  <li>Cable Number: [% cable_number %]</li>
+</ul>
+<p>[% Body.replace("\n", "<br>") %]</p>
+<hr>
