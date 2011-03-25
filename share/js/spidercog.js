@@ -1,3 +1,5 @@
+Cog.App = 'SpiderCog';
+
 $SpiderCog = (SpiderCog = function() {this.init()}).prototype = new Cog;
 
 $SpiderCog.cable_map = {};

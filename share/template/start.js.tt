@@ -1,5 +1,0 @@
-jQuery(
-    function() {
-        (new SpiderCog()).dispatch(location.pathname);
-    }
-);

@@ -20,10 +20,6 @@ use constant site_navigation => [
     ['Stop' => ['stop']],
 ];
 
-use constant js_files => [qw(
-    spidercog.js
-)];
-
 use constant url_map => [
     '()',
     ['/.*' => 'main'],
@@ -34,6 +30,10 @@ use constant post_map => [
     ['/save/cable/?' => 'save_cable'],
     ['/save/html/?' => 'save_html'],
 ];
+
+use constant js_files => [qw(
+    spidercog.js
+)];
 
 sub handle_save_cable {
     my $self = shift;
