@@ -57,30 +57,20 @@ sub handle_save_html {
 package App::SpiderCog::Store;
 use Mouse;
 extends 'Cog::Store';
+use App::CableCog;
 
 use constant schemata => [
-    'App::SpiderCog::Cable::Schema',
+    'App::CableCog::Cable::Schema',
 ];
 
+use XXX;
 sub put {
     my ($self, $node) = @_;
     my $pointer = $self->content->content_pointer($node);
-    return if -e $pointer;
+    $pointer =~ s/(\w{4})\.cog$/*.cog/;
+    return if glob($pointer);
     $self->content->update($node);
 }
-
-package App::SpiderCog::Cable::Schema;
-use Mouse;
-extends 'Cog::Schema';
-
-use constant type => 'cable';
-use constant parent => 'CogNode';
-use constant fields => [
-    'publish_date',
-    'cable_title',
-    'cable_sent',
-    'cable_number',
-];
 
 package App::SpiderCog::Content;
 use Mouse;
